@@ -15,15 +15,25 @@
         
         <br /><br />
      
-        Loan Amount:<asp:TextBox ID="tbLoanAmt" runat="server" ></asp:TextBox>
+        *Loan Amount:<asp:TextBox ID="tbLoanAmt" runat="server" ></asp:TextBox>
+                  
+        
+                  
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="tbLoanAmt" ErrorMessage="Please insert a loan amount."></asp:RequiredFieldValidator>
+                  
+        
                   
         <br /><br />      
         
-        Annual Interest %: <asp:TextBox ID="tbAnnualInterest" runat="server" ></asp:TextBox>
+        *Annual Interest %: <asp:TextBox ID="tbAnnualInterest" runat="server" ></asp:TextBox>
+        
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="tbAnnualInterest" ErrorMessage="Please insert an interest rate."></asp:RequiredFieldValidator>
         
         <br /><br />
 
-        Loan Term (Yrs): <asp:TextBox ID="tbLoanTerm" runat="server" ></asp:TextBox>
+        *Loan Term (Yrs): <asp:TextBox ID="tbLoanTerm" runat="server" ></asp:TextBox>
+        
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="tbLoanTerm" ErrorMessage="Please insert the loan term."></asp:RequiredFieldValidator>
         
         <br /><br />
 
@@ -31,14 +41,31 @@
         &nbsp
         <asp:Button ID="btnclear" runat="server" Text="Clear" Width="82px" />
         
-        <br /><br />
+        <br />
+        <br />
+&nbsp;* = Required Field<br />
+
+        <% If Not IsPostBack Then%>
+            
+            <p>Welcome to my mortgage calculator. Please complete the fields above to have your 
+                monthly payment and loan repayment scheudle calculated for you.
+            </p>
+        <%Else%>
+            
+            <br />
                 
         Monthly Payment: &nbsp; <asp:Label ID="lblMonthlyPmt" runat="server"></asp:Label>
         
         <br /><br />
         
-        <asp:GridView ID="loanGridView" runat="server" />
+        <asp:GridView ID="loanGridView" runat="server" BackColor="White" BorderStyle="Solid" BorderColor="Black" CssClass="cssgridview">
+            <AlternatingRowStyle BackColor="LightGray" />
+            <HeaderStyle BackColor="DarkGray" HorizontalAlign="Center" VerticalAlign="Middle" Height="45px" />
+            <RowStyle Height="35px" HorizontalAlign="Center" />
+
+        </asp:GridView>
             
+        <%End If%>
         </div>
     </form>
 </body>
