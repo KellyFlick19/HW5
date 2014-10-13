@@ -11,13 +11,15 @@
     <form id="form1" runat="server">
     <div>
     
-    Mike's Mortgage Calculator
+    <h1>Mike's Mortgage Calculator</h1>
+        <hr />
+
+        <br />
         
-        <br /><br />
-     
-        *Loan Amount:<asp:TextBox ID="tbLoanAmt" runat="server" ></asp:TextBox>
+   
+        <br />&nbsp;*Loan Amount:<asp:TextBox ID="tbLoanAmt" runat="server" style="margin-left: 34px" Width="128px" ></asp:TextBox>
                   
-        
+        &nbsp
                   
         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="tbLoanAmt" ErrorMessage="Please insert a loan amount."></asp:RequiredFieldValidator>
                   
@@ -25,14 +27,14 @@
                   
         <br /><br />      
         
-        *Annual Interest %: <asp:TextBox ID="tbAnnualInterest" runat="server" ></asp:TextBox>
-        
+        *Annual Interest %: <asp:TextBox ID="tbAnnualInterest" runat="server" style="margin-left: 0px" Width="128px" ></asp:TextBox>
+        &nbsp
         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="tbAnnualInterest" ErrorMessage="Please insert an interest rate."></asp:RequiredFieldValidator>
         
         <br /><br />
 
-        *Loan Term (Yrs): <asp:TextBox ID="tbLoanTerm" runat="server" ></asp:TextBox>
-        
+        *Loan Term (Yrs):<asp:TextBox ID="tbLoanTerm" runat="server" style="margin-left: 16px" Width="128px" ></asp:TextBox>
+        &nbsp
         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="tbLoanTerm" ErrorMessage="Please insert the loan term."></asp:RequiredFieldValidator>
         
         <br /><br />
@@ -48,7 +50,7 @@
         <% If Not IsPostBack Then%>
             
             <p>Welcome to my mortgage calculator. Please complete the fields above to have your 
-                monthly payment and loan repayment scheudle calculated for you.
+                monthly payment and loan repayment schedule calculated for you.
             </p>
         <%Else%>
             
